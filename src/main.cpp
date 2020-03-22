@@ -1,11 +1,12 @@
 #include <iostream>
 #include "BazaTestu.hh"
+#include "LZespolona.hh"
 
 using namespace std;
 
 
 
-
+/*****************************
 int main(int argc, char **argv)
 {
 
@@ -43,4 +44,14 @@ int main(int argc, char **argv)
   cout << " Koniec testu" << endl;
   cout << endl;
 
+}
+*************************************/
+
+int main(){
+  LZespolona L1 = utworz(2,3);
+  wyswietl_liczbe (L1);
+  LZespolona L2 = utworz(3,-2);
+  wyswietl_liczbe (L2);
+  LZespolona L3 = L1 + L2;
+  wyswietl_liczbe (L3);
 }
