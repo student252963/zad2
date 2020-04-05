@@ -9,6 +9,7 @@ using namespace std;
  * Tablica, ktora jest widoczna tylko w tym module.
  * Zawiera ona tresc latwego testu.
  */
+
 static WyrazenieZesp  TestLatwy[] =
   { {{2,1}, Op_Dodaj, {1,2}},
     {{1,0}, Op_Odejmij, {0,1}},
@@ -20,6 +21,13 @@ static WyrazenieZesp  TestLatwy[] =
  * Analogicznie zdefiniuj test "trudne"
  *
  */
+
+static WyrazenieZesp TestTrudny[] =
+  { {{2.5,0.8}, Op_Dodaj, {3.5,-4.6}},
+    {{13.8,6.6}, Op_Odejmij, {0.3,1.8}},
+    {{4.5,0}, Op_Mnoz, {2.2,0.1}},
+    {{2.4,1.4}, Op_Dziel, {0.5,-0.5}},
+  }; 
 
 
 
@@ -76,13 +84,15 @@ bool InicjalizujTest( BazaTestu  *wskBazaTestu, const char *sNazwaTestu )
   if (!strcmp(sNazwaTestu,"latwy")) {
     UstawTest(wskBazaTestu,TestLatwy,sizeof(TestLatwy)/sizeof(WyrazenieZesp));
     return true;
-  }
-  /*
-   * Analogicznie zrob inicjalizacje dla testu trudne
-   */
-
+  } else
+      if (!strcmp(sNazwaTestu,"trudny")) {
+    UstawTest(wskBazaTestu,TestTrudny,sizeof(TestTrudny)/sizeof(WyrazenieZesp));
+    return true;
+      } else
+        {
   cerr << "Otwarcie testu '" << sNazwaTestu << "' nie powiodlo sie." << endl;
   return false;
+	}
 }
 
 

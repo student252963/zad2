@@ -17,7 +17,8 @@ struct BazaTestu {
   unsigned int    IndeksPytania; /* Numer pytania, ktore ma byc pobrane jako nastepne */
 };
 
-
+void UstawTest( BazaTestu *wskBazaTestu, WyrazenieZesp *wskTabTestu, unsigned int IloscPytan );
+  
 /*
  * Inicjalizuje test powiazany z dana nazwa.
  */

@@ -28,9 +28,12 @@ std::ostream & operator << (std::ostream & strm_wy, const LZespolona & Wynik);
 std::istream & operator >> (std::istream & strm_we, LZespolona &Z1);
 
 LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2);
-LZespolona  operator - (LZespolona  Skl1,  LZespolona  Skl1);
-LZespolona  operator * (LZespolona  Skl1,  LZespolona  Skl1);
-LZespolona  operator / (LZespolona  Skl1,  LZespolona  Skl1);
+LZespolona  operator - (LZespolona  Skl1,  LZespolona  Skl2);
+LZespolona  operator * (LZespolona  Skl1,  LZespolona  Skl2);
+LZespolona  operator / (LZespolona  Skl1,  LZespolona  Skl2);
+
+bool operator == (LZespolona  Skl1,  LZespolona  Skl2);
+bool operator != (LZespolona  Skl1,  LZespolona  Skl2);
 
 
 #endif

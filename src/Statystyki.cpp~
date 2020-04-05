@@ -1,0 +1,61 @@
+#include <iostream>
+#include "Statystyki.hh"
+
+using namespace std;
+
+
+
+Statystyka inicjuj_stat (Statystyka &st)
+{
+  st.dobre = 0;
+  st.zle = 0;
+  return st;
+}
+
+Statystyka dodaj_dobra (Statystyka &st)
+{
+  st.dobre++;
+  return st;
+}
+
+Statystyka dodaj_zla (Statystyka &st)
+{
+  st.zle++;
+  return st;
+}
+
+int poprawnych (Statystyka & st)
+{
+  int pop;
+
+  pop = st.dobre;
+  return pop;
+}
+
+int wszystkich (Statystyka & st)
+{
+  int wszyst;
+
+  wszyst = st.dobre + st.zle;
+  return wszyst;
+}
+
+int procent_pop (Statystyka & st)
+{
+  int pr_pop;
+
+  pr_pop = poprawnych(st)*100 / wszystkich(st);
+
+  return pr_pop;
+}
+
+ostream & operator << (ostream &strm, Statystyka &st)
+{
+  cout << " Ilosc poprawnych odpowiedzi: " << st.dobre << endl;
+  cout << " Ilość blednych odpowiedzi: " << st.zle << endl;
+  cout << " Wynik procentowy poprawnych odpowiedzi: " << procent_pop(st) << "%" << endl;
+	 return strm;
+}
+    
+
+  
